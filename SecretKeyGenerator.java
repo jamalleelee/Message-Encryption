@@ -21,5 +21,4 @@ public class SecretKeyGenerator {
 		return myKey;
 	}
 
-
 }

@@ -19,5 +19,4 @@ public class MyMessage {
 		sc.close();
 	}
 
-	
 }

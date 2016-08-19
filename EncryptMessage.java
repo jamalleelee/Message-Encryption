@@ -9,7 +9,6 @@ import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
-import javax.crypto.spec.SecretKeySpec;
 
 public class EncryptMessage {
 
@@ -19,10 +18,9 @@ public class EncryptMessage {
 		String userMessageInChars = null;
 		try {
 
-			Key userAESKey = new SecretKeySpec(myKey.getEncoded(), "AES");
 			Cipher userCipher = Cipher.getInstance("AES");
 
-			userCipher.init(Cipher.ENCRYPT_MODE, userAESKey);
+			userCipher.init(Cipher.ENCRYPT_MODE, myKey);
 
 			userEncryptedMessage = userCipher.doFinal(userMessage.getBytes());
 			userMessageInBytes = Arrays.toString(userEncryptedMessage);
